@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import uvicorn
@@ -32,7 +31,8 @@ async def get_move(request: Request):
 
     chess_manager.set_context(pgn, timeleft)
     print("pgn", pgn)
-
+    
+    
     try:
         start_time = time.perf_counter()
         move, move_probs, logs = chess_manager.get_model_move()
@@ -51,6 +51,7 @@ async def get_move(request: Request):
             },
             status_code=500,
         )
+    
 
     # Confirm type of move_probs
     if not isinstance(move_probs, dict):
