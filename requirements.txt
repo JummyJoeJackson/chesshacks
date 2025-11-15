@@ -17,3 +17,4 @@ typing_extensions==4.15.0
 uvicorn==0.38.0
 torch==2.2.1
 numpy==1.26.4
+transformers==4.44.2
