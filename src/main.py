@@ -1,12 +1,14 @@
 # Necessary imports
-from .utils import chess_manager, GameContext, EvalNet, encode_board
+from .utils import chess_manager, GameContext, EvalNet, encode_board, pgn_to_board
 import torch
-import os
-from .utils import pgn_to_board
+from huggingface_hub import hf_hub_download
+import pathlib
 
 
 # Write code here that runs once
 # Can do things like load models from huggingface, make connections to subprocesses, etcwenis
+MODEL_NAME = "JummyJoeJackson/chess-bot-model"
+CACHE_DIR = pathlib.Path("./.model_cache")
 
 
 # Minimax search using trained model
@@ -53,14 +55,19 @@ def make_best_move(board, model, depth):
     return best_move
 
 
-# Load model weights
-def load_model(path="eval_net_weights.pt"):
+# Load model weights from Hugging Face Hub
+def load_model_from_hf():
+    # Download and cache model weights from Hugging Face Hub
+    CACHE_DIR.mkdir(exist_ok=True)
+    if not (CACHE_DIR / MODEL_NAME.split('/')[-1]).exists():
+        print(f"Downloading model {MODEL_NAME} from Hugging Face Hub...")
     model = EvalNet()
-    if os.path.exists(path):
-        model.load_state_dict(torch.load(path))
-        print(f"Loaded model weights from {path}")
-    else:
-        print("Model weights not found, initializing fresh model")
+
+    # Load weights with huggingface_hub cache if available
+    weights_path = hf_hub_download(repo_id=MODEL_NAME, filename="pytorch_model.bin", cache_dir=CACHE_DIR)
+    state_dict = torch.load(weights_path)
+    model.load_state_dict(state_dict)
+    print(f"Model loaded from {weights_path}")
     model.eval()
     return model
 
@@ -74,7 +81,11 @@ def get_move(pgn: str) -> str:
     ctx = chess_manager.context
     model = ctx.state.get('model')
     if model is None:
-        model = load_model()
+        try:
+            model = load_model_from_hf()
+        except Exception as e:
+            print("Failed to load model from HF Hub, initializing fresh model", e)
+            model = EvalNet()
         ctx.state['model'] = model
 
     best_move = make_best_move(board, model, depth=3)
@@ -84,5 +95,9 @@ def get_move(pgn: str) -> str:
 # Reset function called at the start of each new game
 @chess_manager.reset
 def reset_func(ctx: GameContext):
-    model = load_model()
+    try:
+        model = load_model_from_hf()
+    except Exception as e:
+        print("Failed to load model from HF Hub in reset, initializing fresh model", e)
+        model = EvalNet()
     ctx.state['model'] = model
