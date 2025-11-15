@@ -2,10 +2,11 @@
 import chess
 import torch
 import json
-from torch import nn
-from torch import optim
+import os
+import shutil
+from torch import nn, optim
 from torch.utils.data import IterableDataset, DataLoader
-from utils import pgn_to_board
+from huggingface_hub import HfApi, Repository
 
 
 # Encodes chess board to tensor (64 squares * 6 piece types)
@@ -88,7 +89,28 @@ if __name__ == "__main__":
     dataset = EvalDataset(['data/eval_data.jsonl'], encode_board)
     train_eval_net(model, dataset)
 
-    files = ["evals/lichess_db_eval_part1_simplified.jsonl"]
+    # Save model locally first
+    model_path = "eval_net_weights.pt"
+    torch.save(model.state_dict(), model_path)
+    
+    # Push to HF Hub
+    repo_name = "JummyJoeJackson/chess-bot-model"
+    repo_local_dir = "./chess-bot-model"
 
-    # Save your model for inference/deployment
-    torch.save(model.state_dict(), "eval_net_weights.pt")
+    # Clone or create repo locally
+    api = HfApi()
+    if not os.path.exists(repo_local_dir):
+        api.create_repo(repo_name, exist_ok=True)
+        repo = Repository(local_dir=repo_local_dir, clone_from=repo_name)
+    else:
+        repo = Repository(local_dir=repo_local_dir)
+    
+    # Copy weights to repo folder
+    shutil.copy(model_path, repo_local_dir)
+
+    # Commit and push
+    repo.git_add()
+    repo.git_commit("Update model weights after training")
+    repo.git_push()
+    
+    print(f"Model pushed to Hugging Face Hub at https://huggingface.co/{repo_name}")
