@@ -1,4 +1,4 @@
-from .utils import *
+from utils import *
 
 
 # Entrypoint function called to get the next move

@@ -1,6 +1,7 @@
 import chess
 import torch
 import os
+from bot import EvalNet
 
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 model_path = os.path.join(root_dir, "models", "model_weights.pt")
@@ -14,7 +15,7 @@ def fen_to_board(fen: str) -> chess.Board:
 
 # Load model from Local Storage
 def load_model(config):
-    from .bot import EvalNet
+    #from .bot import EvalNet
     model = EvalNet(config)
     if os.path.exists(model_path):
         model.load_state_dict(torch.load(model_path))
