@@ -16,6 +16,5 @@ typing-inspection==0.4.2
 typing_extensions==4.15.0
 uvicorn==0.38.0
 gdown==4.7.1
-torch==2.2.4
 numpy==1.26.4
 transformers==4.44.2
