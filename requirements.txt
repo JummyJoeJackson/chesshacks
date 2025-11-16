@@ -17,5 +17,4 @@ typing_extensions==4.15.0
 uvicorn==0.38.0
 gdown==4.7.1
 numpy==1.26.4
-
 transformers==4.44.2
