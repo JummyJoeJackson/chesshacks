@@ -1,8 +1,7 @@
 from typing import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from chess import Board, Move
 from chess.pgn import read_game
-from dataclasses import field
 import contextlib
 import io
 import logging

@@ -1,8 +1,5 @@
-import io
 import chess
 import torch
-import os
-import gdown
 from .bot import *
 
 
@@ -75,7 +72,7 @@ def minimax(board, depth, maximizing, model):
 
 
 # Select the best move using minimax and the neural network
-def make_best_move(board, model, depth):
+def make_best_move(board, model, depth) -> chess.Move:
     best_move = None
     best_score = float('-inf')
 

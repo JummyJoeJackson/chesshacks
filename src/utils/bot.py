@@ -74,17 +74,18 @@ def train_eval_net(eval_net, dataset, epochs=5, batch_size=32, lr=0.001):
             print(f"Epoch {epoch+1}/{epochs}, No data processed.")
 
 
+# Example usage
 if __name__ == "__main__":
-    # Train as usual
+    # Initialize the evaluation network
     config = ChessBotConfig()
-    model = EvalNet(config)
-    dataset = EvalDataset(['src/utils/training/evals/lichess_db_eval_part1_simplified.jsonl'], encode_board)
-    train_eval_net(model, dataset)
+    eval_net = EvalNet(config)
 
-    # Save model in Hugging Face format locally
-    model.save_pretrained("./chess-bot-model")
+    # Prepare dataset
+    file_list = ['Training/lichess_db_eval_part1_simplified.jsonl', 'Training/lichess_db_eval_part1_simplified.jsonl']  # Actual file paths
+    dataset = EvalDataset(file_list, encode_board)
 
-    # Push model to Hugging Face Hub
-    model.push_to_hub("JummyJoeJackson/chess-bot-model")
+    # saves the model weights after training
+    torch.save(eval_net.state_dict(), "model_weights.pt")
 
-    print("Model and config saved in transformers format!")
+    # Train the evaluation network
+    train_eval_net(eval_net, dataset, epochs=10, batch_size=64, lr=0.0005)
