@@ -6,5 +6,5 @@ venv
 devtools
 Training
 README.md
-model_weights.pt
 .model_cache
+model_weights.pt
