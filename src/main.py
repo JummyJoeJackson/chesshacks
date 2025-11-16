@@ -5,6 +5,7 @@ MODEL_GDRIVE_ID = ""
 MODEL_LOCAL_PATH = "./Training/model_weights.pt"
 config = ChessBotConfig()
 
+
 # Entrypoint function called to get the next move
 @chess_manager.entrypoint
 def get_move(ctx: GameContext) -> str:
@@ -50,3 +51,18 @@ def reset_func(ctx: GameContext):
         torch.save(model.state_dict(), "model_weights.pt")
         print("Saved fresh fallback model weights as model_weights.pt")
     ctx.state['model'] = model
+
+# Test function to train the model (not called during gameplay)
+if __name__ == "__main__":
+    board = chess.Board()
+    config = ChessBotConfig()
+    model = EvalNet(config)
+
+    board.push_san("e4")
+    board.push_san("e5")
+    board.push_san("Nf3")
+    board.push_san("Nc6")
+
+    move = get_move(GameContext(board, timeLeft=300, logProbabilities=None ))
+
+    print("Model output:", move)
