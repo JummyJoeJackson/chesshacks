@@ -45,7 +45,7 @@ def encode_board(board: chess.Board) -> torch.Tensor:
 
 
 # Minimax search using trained model
-def minimax(board, depth, maximizing, model):
+def minimax(board, depth, maximizing, model, alpha=float('-inf'), beta=float('inf')):
     # Base case: evaluate board using neural network
     if depth == 0 or board.is_game_over():
         x = encode_board(board)
@@ -57,20 +57,28 @@ def minimax(board, depth, maximizing, model):
         max_eval = float('-inf')
         for move in moves:
             board.push(move)
-            eval_score = minimax(board, depth - 1, False, model)
+            eval_score = minimax(board, depth - 1, False, model, alpha, beta)
             board.pop()
             if eval_score > max_eval:
                 max_eval = eval_score
+            if max_eval > alpha:
+                alpha = max_eval
+            if beta <= alpha:
+                break
         return max_eval
     # Minimizing player
     else:
         min_eval = float('inf')
         for move in moves:
             board.push(move)
-            eval_score = minimax(board, depth - 1, True, model)
+            eval_score = minimax(board, depth - 1, True, model, alpha, beta)
             board.pop()
             if eval_score < min_eval:
                 min_eval = eval_score
+            if min_eval < beta:
+                beta = min_eval
+            if beta <= alpha:
+                break
         return min_eval
 
 

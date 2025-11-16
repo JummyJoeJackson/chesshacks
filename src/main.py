@@ -17,7 +17,7 @@ def get_move(ctx: GameContext) -> str:
         context.state['model'] = model
     
     try:
-        best_move = make_best_move(board, model, depth=3)
+        best_move = make_best_move(board, model, depth=2)
     except Exception as e:
         print("Error during move calculation:", e)
         best_move = next(iter(board.legal_moves), None)
