@@ -1,0 +1,98 @@
+[00:00:01.787] Server  LOG      ✓ Ready in 1276ms
+[00:00:27.304] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.700] Server  LOG     [devtools env] {}
+[00:00:28.022] Browser LOG     AnalysisBoardWrapper: initializing board {"playerColor":"white"}
+[00:00:28.022] Browser LOG     initAnalysisBoard: enabling play-vs-bot mode {"playerColor":"white"}
+[00:00:29.481] Browser LOG     initAnalysisBoard: human move detected
+[00:00:29.481] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:29.540] Server  LOG     /api/bot POST received
+[00:00:29.542] Server  LOG     Starting serve.py process {}
+[00:00:29.596] Server  LOG     Waiting for serve.py to become ready
+[00:00:29.596] Server  LOG     Checking serve.py readiness {}
+[00:00:29.603] Server  ERROR   Error checking serve.py readiness
+[00:00:29.803] Server  LOG     Checking serve.py readiness {}
+[00:00:29.804] Server  ERROR   Error checking serve.py readiness
+[00:00:30.006] Server  LOG     Checking serve.py readiness {}
+[00:00:30.007] Server  ERROR   Error checking serve.py readiness
+[00:00:30.208] Server  LOG     Checking serve.py readiness {}
+[00:00:30.209] Server  ERROR   Error checking serve.py readiness
+[00:00:30.410] Server  LOG     Checking serve.py readiness {}
+[00:00:30.411] Server  ERROR   Error checking serve.py readiness
+[00:00:30.573] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.573] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.574] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.574] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.575] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.575] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.577] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:30.623] Server  LOG     Checking serve.py readiness {}
+[00:00:30.624] Server  ERROR   Error checking serve.py readiness
+[00:00:30.825] Server  LOG     Checking serve.py readiness {}
+[00:00:30.826] Server  ERROR   Error checking serve.py readiness
+[00:00:30.880] Server  LOG     Restarting serve.py process
+[00:00:30.894] Server  LOG     serve.py process exited
+[00:00:30.895] Server  LOG     Starting serve.py process {}
+[00:00:31.032] Server  LOG     Checking serve.py readiness {}
+[00:00:31.033] Server  ERROR   Error checking serve.py readiness
+[00:00:31.237] Server  LOG     Checking serve.py readiness {}
+[00:00:31.238] Server  ERROR   Error checking serve.py readiness
+[00:00:31.438] Server  LOG     Checking serve.py readiness {}
+[00:00:31.439] Server  ERROR   Error checking serve.py readiness
+[00:00:31.641] Server  LOG     Checking serve.py readiness {}
+[00:00:31.642] Server  ERROR   Error checking serve.py readiness
+[00:00:31.843] Server  LOG     Checking serve.py readiness {}
+[00:00:31.844] Server  ERROR   Error checking serve.py readiness
+[00:00:32.054] Server  LOG     Checking serve.py readiness {}
+[00:00:32.055] Server  ERROR   Error checking serve.py readiness
+[00:00:32.255] Server  LOG     Checking serve.py readiness {}
+[00:00:32.256] Server  ERROR   Error checking serve.py readiness
+[00:00:32.464] Server  LOG     Checking serve.py readiness {}
+[00:00:32.465] Server  ERROR   Error checking serve.py readiness
+[00:00:32.667] Server  LOG     Checking serve.py readiness {}
+[00:00:32.668] Server  ERROR   Error checking serve.py readiness
+[00:00:32.873] Server  LOG     Checking serve.py readiness {}
+[00:00:32.874] Server  ERROR   Error checking serve.py readiness
+[00:00:33.089] Server  LOG     Checking serve.py readiness {}
+[00:00:33.090] Server  ERROR   Error checking serve.py readiness
+[00:00:33.305] Server  LOG     Checking serve.py readiness {}
+[00:00:33.306] Server  ERROR   Error checking serve.py readiness
+[00:00:33.513] Server  LOG     Checking serve.py readiness {}
+[00:00:33.514] Server  ERROR   Error checking serve.py readiness
+[00:00:33.718] Server  LOG     Checking serve.py readiness {}
+[00:00:33.719] Server  ERROR   Error checking serve.py readiness
+[00:00:33.931] Server  LOG     Checking serve.py readiness {}
+[00:00:33.932] Server  ERROR   Error checking serve.py readiness
+[00:00:34.133] Server  LOG     Checking serve.py readiness {}
+[00:00:34.134] Server  ERROR   Error checking serve.py readiness
+[00:00:34.341] Server  LOG     Checking serve.py readiness {}
+[00:00:34.342] Server  ERROR   Error checking serve.py readiness
+[00:00:34.552] Server  LOG     Checking serve.py readiness {}
+[00:00:34.553] Server  ERROR   Error checking serve.py readiness
+[00:00:34.765] Server  LOG     Checking serve.py readiness {}
+[00:00:34.766] Server  ERROR   Error checking serve.py readiness
+[00:00:34.971] Server  LOG     Checking serve.py readiness {}
+[00:00:34.972] Server  ERROR   Error checking serve.py readiness
+[00:00:35.186] Server  LOG     Checking serve.py readiness {}
+[00:00:35.187] Server  ERROR   Error checking serve.py readiness
+[00:00:35.398] Server  LOG     Checking serve.py readiness {}
+[00:00:35.398] Server  ERROR   Error checking serve.py readiness
+[00:00:35.599] Server  LOG     Checking serve.py readiness {}
+[00:00:35.600] Server  ERROR   Error checking serve.py readiness
+[00:00:35.601] Server  ERROR   server not started
+[00:00:35.709] Browser ERROR   initAnalysisBoard: /api/bot returned non-ok {"status":503}
+[00:00:37.337] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.338] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.339] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.339] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.340] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.341] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.342] Server  LOG     Detected change in src directory, scheduling serve.py restart
+[00:00:37.382] Server  ERROR   [serve.py stderr] "INFO:     Started server process [8920]"
+[00:00:37.382] Server  ERROR   [serve.py stderr] "INFO:     Waiting for application startup.\r\nINFO:     Application startup complete."
+[00:00:37.382] Server  ERROR   [serve.py stderr] "INFO:     Uvicorn running on http://0.0.0.0:5058 (Press CTRL+C to quit)"
+[00:00:37.655] Server  LOG     Restarting serve.py process
+[00:00:37.688] Server  LOG     serve.py process exited
+[00:00:37.688] Server  LOG     Starting serve.py process {}
+[00:00:43.496] Server  ERROR   [serve.py stderr] "INFO:     Started server process [3344]"
+[00:00:43.496] Server  ERROR   [serve.py stderr] "INFO:     Waiting for application startup.\r\nINFO:     Application startup complete."
+[00:00:43.497] Server  ERROR   [serve.py stderr] "INFO:     Uvicorn running on http://0.0.0.0:5058 (Press CTRL+C to quit)"
