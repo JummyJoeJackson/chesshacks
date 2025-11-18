@@ -4,33 +4,27 @@ This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolut
 
 ## Directory Structure
 
-`/devtools` is a Next.js app that provides a UI for testing your bot. It includes an analysis board that you can use to test your bot and play against your own bot. You do not need to edit, or look at, any of this code (unless you want to). This file should be gitignored. Find out why [here](#installing-devtools-if-you-did-not-run-npx-chesshacks-create).
+`/src` is the source code for the bot. It includes `main.py`, and a folder utils which contains all the files used by it.
 
-`/src` is the source code for your bot. You will need to edit this code to implement your own bot.
+`serve.py` is the backend that interacts with the Next.js and bot (`/src/main.py`). It also handles hot reloading of the bot when changes are made to it. This file, after receiving moves from the frontend, will communicate the current board status to the bot as a PGN string, and will send the bot's move back to the frontend.
 
-`serve.py` is the backend that interacts with the Next.js and your bot (`/src/main.py`). It also handles hot reloading of your bot when you make changes to it. This file, after receiving moves from the frontend, will communicate the current board status to your bot as a PGN string, and will send your bot's move back to the frontend. You do not need to edit any of this code (unless you want to).
-
-While developing, you do not need to run either of the Python files yourself. The Next.js app includes the `serve.py` file as a subprocess, and will run it for you when you run `npm run dev`.
+Unless training, you do not need to run the Python files yourself. The Next.js app includes the `serve.py` file as a subprocess, and will run it for you when you run `npm run dev`.
 
 The backend (as a subprocess) will deploy on port `5058` by default.
-
-This architecture is very similar to how your bot will run once you deploy it. For more information about how to deploy your bot to the ChessHacks platform, see [the docs](https://docs.chesshacks.dev/).
 
 ## Setup
 
 Start by creating a Python virtual environment and installing the dependencies:
 
-```bash
+```shell
 python -m venv .venv
-source .venv/bin/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-or however you want to set up your Python.
-
 Then, install the dependencies for the Next.js app:
 
-```bash
+```shell
 cd devtools
 npm install
 ```
