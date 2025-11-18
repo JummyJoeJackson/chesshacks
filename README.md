@@ -43,7 +43,7 @@ First, you will need to go to the [Modal](https://modal.com/) website and create
 python -m modal setup
 ```
 
-After that's done, you can navigate to the `/Training` directory and run the training algorithm with the following script:
+After that's done, you can navigate to the `/Training` directory and run the training algorithm.
 
 ```shell
 cd Training
@@ -54,9 +54,9 @@ The new model weights and biases will be automatically saved to the `model_weigh
 
 ## Running the app
 
-Lastly, simply run the Nextjs app inside of the devtools folder.
+Lastly, simply run the Next.js app inside of the devtools folder.
 
-```bash
+```shell
 cd devtools
 npm run dev
 ```
@@ -69,7 +69,7 @@ If you get an error like this:
 
 ```python
 Traceback (most recent call last):
-  File "/Users/obama/dev/chesshacks//src/main.py", line 1, in <module>
+  File "/Users/john_doe/code/chess_bot//src/main.py", line 1, in <module>
     from .utils import chess_manager, GameContext
 ImportError: attempted relative import with no known parent package
 ```
@@ -84,8 +84,5 @@ Once you run the app, you should see logs from both the Next.js app and the Pyth
 
 By default, the Next.js app will automatically reload (dismount and remount the subprocess) when you make changes to the code in `/src` OR press the manual reload button on the frontend. This is called HMR (Hot Module Reloading). This means that you don't need to restart the app every time you make a change to the Python code. You can see how it's happening in real-time in the Next.js terminal.
 
-## Parting Words
+## Legal and whatnot
 
-Keep in mind that you fully own all of this code! This entire devtool system runs locally, so feel free to modify it however you want. This is just designed as scaffolding to help you get started.
-
-If you need further help, please first check out the [docs](https://docs.chesshacks.dev/). If you still need help, please join our [Discord](https://docs.chesshacks.dev/resources/discord) and ask for help.
