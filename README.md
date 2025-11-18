@@ -14,6 +14,12 @@ The backend (as a subprocess) will deploy on port `5058` by default.
 
 ## Setup
 
+After forking the repo and opening it on an IDE, add the devtools UI, you can install it with the CLI:
+
+```shell
+npx chesshacks install
+```
+
 Start by creating a Python virtual environment and installing the dependencies:
 
 ```shell
