@@ -37,25 +37,20 @@ Afterwards, make a copy of `.env.template` and name it `.env.local` (NOT `.env`)
 
 Unfortunately, the model in this repository is untrained as the `model_weights.pt` file for the trained model is too large.
 
-First, you will need to go to the [modal]{modal.com} website and create an account, then you can run the following script in the training directory:
+First, you will need to go to the [Modal](https://modal.com/) website and create an account, then you can run the following script in the training directory:
 
 ```shell
 python -m modal setup
 ```
 
-After that's done, you can naviagate to the `Training` directory and run:
+After that's done, you can navigate to the `Training` directory and run the training algorithm with the following script:
 
 ```shell
+cd Training
 modal run modal_test.py
 ```
 
-This will add a `devtools` folder to your current directory and ensure it is gitignored. If you want to install into a subdirectory, you can pass a path:
-
-```bash
-npx chesshacks install my-existing-bot
-```
-
-In both cases, you can then follow the instructions in [Setup](#setup) and [Running the app](#running-the-app) from inside the `devtools` folder.
+The new model weights and biases will be automatically saved to the `model_weights.pt` file in `/Training/models` (not `/root/models`), so if you wish to use the trained model make sure to replace the old one in `/root/models` with the trained model.
 
 ## Running the app
 
