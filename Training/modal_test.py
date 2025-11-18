@@ -10,7 +10,8 @@ image = (
     .add_local_file("utilities.py", "/app/utilities.py")
     .add_local_file("bot.py", "/app/bot.py")
     .add_local_file("utilities.py", "/app/utilities.py")
-    .add_local_file("evals/lichess_db_eval_part1_simplified.jsonl", "/app/lichess_db_eval_part1_simplified.jsonl")
+    # add all files located in /Training/evals
+    .add_local_file("evals/lichess_db_eval_part1_simplified.jsonl", "/app/lichess_db_eval_part2_simplified.jsonl")
     .add_local_file("models/model_weights.pt", "/app/models/model_weights.pt")
 )
 
@@ -100,8 +101,8 @@ def train_chess_model():
         print("Training complete and weights saved to model_weights.pt")
         return "Finished"
 
-    # List your data files (you may need to upload them or mount a volume using Modal)
-    file_list = ['/app/lichess_db_eval_part1_simplified.jsonl']
+    # List your data files that are in /Training/evals
+    file_list = ['/app/lichess_db_eval_part1_simplified.jsonl', "/app/lichess_db_eval_part2_simplified.jsonl"]
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = load_model(ChessBotConfig())
