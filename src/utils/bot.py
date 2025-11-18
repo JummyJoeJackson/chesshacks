@@ -6,13 +6,13 @@ from transformers import PretrainedConfig, PreTrainedModel
 from .utilities import *
 
 
-# Define a config class (required for compatibility)
+# Defines a config class (required for compatibility)
 class ChessBotConfig(PretrainedConfig):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
 
-# Define the evaluation neural network
+# Defines the evaluation neural network
 class EvalNet(PreTrainedModel):
     config_class = ChessBotConfig
 
