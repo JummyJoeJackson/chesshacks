@@ -79,12 +79,13 @@ def train_model(model, dataset, epochs=5, batch_size=64, lr=0.0005):
 # Example usage
 if __name__ == "__main__":
     #from .utilities import load_model, encode_board
+
     model = load_model(ChessBotConfig())
 
-    file_list = ['Training/evals/lichess_db_eval_part1_simplified.jsonl'] #, 'Training/evals/lichess_db_eval_part1_simplified.jsonl']
+    file_list = ['Training/evals/lichess_db_eval_part1_simplified.jsonl', 'Training/evals/lichess_db_eval_part1_simplified.jsonl']
     dataset = EvalDataset(file_list, encode_board)
 
-    train_model(model, dataset, epochs=1, lr=0.001)
+    train_model(model, dataset, epochs=1, lr=0.0005)
 
     torch.save(model.state_dict(), "models/model_weights.pt")
     print("Model training complete and weights saved to models/model_weights.pt")
