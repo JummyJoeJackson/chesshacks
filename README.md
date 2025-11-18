@@ -43,7 +43,7 @@ First, you will need to go to the [Modal](https://modal.com/) website and create
 python -m modal setup
 ```
 
-After that's done, you can navigate to the `Training` directory and run the training algorithm with the following script:
+After that's done, you can navigate to the `/Training` directory and run the training algorithm with the following script:
 
 ```shell
 cd Training
