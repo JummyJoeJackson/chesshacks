@@ -6,7 +6,7 @@ This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolut
 
 `/src` is the source code for the bot. It includes `main.py`, and a folder utils which contains all the files used by it.
 
-`/Training` is the training code and data used by `modal_test.py` to train and update `model_weights.pt`.
+`/Training` is a copy of the files in `/src` altered to become training code and training data used by `modal_test.py` to train and update `model_weights.pt` is added in `/Training/evals`.
 
 `/models` is the folder containing the `model_weights.pt` file that is accessed by the program when running.
 
