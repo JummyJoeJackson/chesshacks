@@ -13,7 +13,7 @@ def fen_to_board(fen: str) -> chess.Board:
     return board
 
 
-# Load model from Local Storage
+# Loads model from Local Storage
 def load_model(config):
     #from .bot import EvalNet
     model = EvalNet(config)
@@ -45,7 +45,7 @@ def encode_board(board: chess.Board) -> torch.Tensor:
     return vector
 
 
-# Minimax search using trained model
+# Minimax search w/ alpha-beta pruning using trained model
 def minimax(board, depth, maximizing, model, alpha=float('-inf'), beta=float('inf')):
     # Base case: evaluate board using neural network
     if depth == 0 or board.is_game_over():
