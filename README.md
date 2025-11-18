@@ -14,7 +14,14 @@ The backend (as a subprocess) will deploy on port `5058` by default.
 
 ## Setup
 
-After forking the repo and opening it on an IDE, add the devtools UI, you can install it with the CLI:
+Start by cloning the repository.
+
+```shell
+git clone https://github.com/JummyJoeJackson/AI-Chess-Bot.git
+cd AI-Chess-Bot
+```
+
+After cloning the repo, add the devtools UI, you can install it with the CLI:
 
 ```shell
 npx chesshacks install
