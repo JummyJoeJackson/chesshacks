@@ -1,6 +1,6 @@
-# CNN-Powered Chess Bot
+# AI Chess Bot
 
-This is a starter bot for ChessHacks. It includes a basic bot and devtools. This is designed to help you get used to what the interface for building a bot feels like, as well as how to scaffold your own bot.
+This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information into a optimized Minimax Algorithm.
 
 ## Directory Structure
 
