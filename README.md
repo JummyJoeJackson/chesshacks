@@ -33,12 +33,18 @@ Afterwards, make a copy of `.env.template` and name it `.env.local` (NOT `.env`)
 
 > Copy the `.env.local` file to the `devtools` directory as well.
 
-## Installing `devtools` (if you did not run `npx chesshacks create`)
+## Training the Model
 
-If you started from your own project and only want to add the devtools UI, you can install it with the CLI:
+Unfortunately, the model in this repository is untrained as the files for the trained model is too large. You can access
 
-```bash
-npx chesshacks install
+First, you will need to go to the modal[modal.com] website and create an account, then you can run the following script in the training directory:
+
+```shell
+
+```
+
+```shell
+modal run modal.py
 ```
 
 This will add a `devtools` folder to your current directory and ensure it is gitignored. If you want to install into a subdirectory, you can pass a path:
