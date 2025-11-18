@@ -31,7 +31,7 @@ After cloning the repo, add the devtools UI, you can install it with the CLI:
 npx chesshacks install
 ```
 
-Next, create a Python virtual environment and installing the dependencies:
+Next, create a Python virtual environment and install the dependencies:
 
 ```shell
 python -m venv .venv
