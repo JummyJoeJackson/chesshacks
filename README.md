@@ -50,7 +50,7 @@ cd Training
 modal run modal_test.py
 ```
 
-The new model weights and biases will be automatically saved to the `model_weights.pt` file in `/Training/models` (not `/root/models`), so if you wish to use the trained model make sure to replace the old one in `/root/models` with the trained model.
+The new model weights and biases will be automatically saved to the `model_weights.pt` file in `/Training/models` (not `/models`), so if you wish to use the trained model make sure to replace the old one in `/models` with the trained model.
 
 ## Running the app
 
