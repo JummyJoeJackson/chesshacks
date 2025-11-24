@@ -2,6 +2,15 @@
 
 This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information directly into an optimized move selection algorithm.
 
+## Table of Contents
+- [Directory Structure](#Directory_Structure)
+- [Setup](#Setup)
+- [Training](#Training_the_Model)
+- [Running the App](#Running_the_App)
+- [Troubleshooting](#Troubleshooting)
+- [Logs](#Logs)
+- [Hot Module Reloading](#HMR_(Hot_Module_Reloading))
+
 ## Directory Structure
 
 `/src` is the source code for the bot. It includes `main.py`, and a folder utils which contains all the files used by it.
