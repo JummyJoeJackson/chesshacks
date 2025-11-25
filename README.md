@@ -31,6 +31,8 @@ Start by cloning the repository.
 git clone https://github.com/JummyJoeJackson/AI-Chess-Bot.git
 cd AI-Chess-Bot
 ```
+---
+
 
 After cloning the repo, add the devtools UI, you can install it with the CLI:
 
